@@ -1,4 +1,4 @@
-package com.xyy.collection;
+package com.xyy.collection.model;
 
 /**
  * <p>
@@ -63,6 +63,7 @@ public class HashKeyModel implements  Comparable{
 
     public int compareTo(Object o) {
         HashKeyModel that = (HashKeyModel) o;
+        System.out.println(toString()+"compareTo"+that);
         return getAge() - that.getAge();
     }
 }

@@ -1,5 +1,7 @@
 package com.xyy.collection;
 
+import com.xyy.collection.model.HashKeyModel;
+
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -14,6 +16,7 @@ public class TreeMapTest {
         /**
          * TreeMap 是按照key排序的map，因此key需要实现Comparable接口或者创建TreeMap时传入排序器Comparator
          * TreeMap 底层是红黑树（相对平衡的二叉树），每次插入都是从根节点进行遍历，插入之后还要进行重新旋转，平衡
+         * key不可以为null，value可以为null
          */
         HashKeyModel key1=new HashKeyModel("key1",19);
         HashKeyModel key2=new HashKeyModel("key2",19);
@@ -24,9 +27,11 @@ public class TreeMapTest {
         treeMap.put(key2,key2);
         treeMap.put(key3,key3);
         treeMap.put(key4,key4);
+        treeMap.put(key4,null);
         System.out.println(treeMap.get(key1));
         System.out.println(treeMap.get(key2));
         System.out.println(treeMap.get(key3));
         System.out.println(treeMap.get(key4));
+        //System.out.println(treeMap.get(null));
     }
 }

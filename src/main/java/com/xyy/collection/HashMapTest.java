@@ -1,5 +1,7 @@
 package com.xyy.collection;
 
+import com.xyy.collection.model.HashKeyModel;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +19,8 @@ public class HashMapTest {
          * 如果equals(o)=true会覆盖之前的值，如果为false会在该坐标的链表后面添加
          *
          * 获取值的时候先根据key的hashCode获取下标位置，遍历该节点的链表，比较hasCode和equals 相同返回，没有返回null
+         *
+         * key和value都可以为null
          */
         HashKeyModel key1=new HashKeyModel("key1",19);
         HashKeyModel key2=new HashKeyModel("key2",19);
@@ -27,9 +31,11 @@ public class HashMapTest {
         hashMap.put(key2,key2);
         hashMap.put(key3,key3);
         hashMap.put(key4,key4);
+        hashMap.put(null,null);
         System.out.println(hashMap.get(key1));
         System.out.println(hashMap.get(key2));
         System.out.println(hashMap.get(key3));
         System.out.println(hashMap.get(key4));
+        System.out.println(hashMap.get(null));
     }
 }
