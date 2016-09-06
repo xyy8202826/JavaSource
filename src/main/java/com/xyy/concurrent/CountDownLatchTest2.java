@@ -22,7 +22,7 @@ public class CountDownLatchTest2 {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                };
+                }
             }.start();
         }
         try {
